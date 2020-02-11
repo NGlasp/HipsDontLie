@@ -40,11 +40,12 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 # First, we need to import our data into R Studio so that we can work with it.
 # We could directly create vectors for variables in our dataset.
 
-# Create a vector with all the data points for Gorilla 1; Name this vector gor1 .
+# Create a vector with all the data points for Gorilla 1; Name this vector gor1
+assign("gor1", c(37,	123,	20,	178,	21,	17.5,	6.5,	22))
 
 
 # Print gor1 in the Console below. Do you see the data you just entered?
-
+gor1
 
 # When we get to large datasets, however, entering each datapoint into R manually is impractical and time-consuming (not to mention very annoying). Luckily, we can import whole datasets into R via our spreadsheets!
 # The best way to do this is to use a .csv (comma-separated values) file type, because R can easily read these.
@@ -53,16 +54,16 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 # I have already created the .csv file for you on GitHub. It is called PlushieData.csv .
 # To import a .csv file into R, we use the function read.csv() .
 # But we need to tell R which file to import and where to find it. There are many ways to do this. We will use a second funtion, file.choose(), which will show you a pop-up window where you can navigate to the PlushieData.csv file on your computer (like in Finder).
-
+read.csv(file.choose())
 #For example, if I had a .csv file with data on primate bones that I wanted to import into R, I could type:
 bone.dat <- read.csv(file.choose())
 # Then I would press Enter and choose my .csv file from the pop-up window.
 
 # Your turn! Import the PlushieData.csv into R. Call this dataset plush.dat .
-
+plush.dat <- read.csv(file.choose())
 
 # Print plush.dat into the Console below. You should now see your data in the Console, and see plush.dat in the Environment tab to the right. How many variables do you see?
-
+plush.dat
 
 
 # Now that we have our data in R, we can start to play with it.
@@ -75,7 +76,11 @@ bone.dat <- read.csv(file.choose())
 # For example:
 mean(plush.dat$Flexion)
 # Answer: 43.25 degrees
-
+mean(plush.dat$Extension)
+mean(plush.dat$Adduction)
+mean(plush.dat$Abduction)
+mean(plush.dat$PelvicBreadth)
+mean(plush.dat$MidthighCircumference)
 
 
 
@@ -97,8 +102,12 @@ mean(plush.dat$Flexion)
 # Median: To calculate the median of a variable, we use the function median() .
 
 # Calculate the medians for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
-
-
+median(plush.dat$Flexion)
+median(plush.dat$Extension)
+median(plush.dat$Adduction)
+median(plush.dat$Abduction)
+median(plush.dat$PelvicBreadth)
+median(plush.dat$MidthighCircumference)
 
 
 
@@ -123,9 +132,14 @@ mean(plush.dat$Flexion)
 range.flex <- max(plush.dat$Flexion) - min(plush.dat$Flexion)
 range.flex
 #Answer: 11 degrees
-
-
-
+range.extend <- max(plush.dat$Extension) - min(plush.dat$Extension)
+range.extend
+range.add <- max(plush.dat$Adduction) - min(plush.dat$Adduction)
+range.add
+range.abd <- max(plush.dat$Abduction) - min(plush.dat$Abduction)
+range.abd
+range.Pelbread <- max(plush.dat$PelvicBreadth) - min(plush.dat$PelvicBreadth)
+range.Pelbread
 
 
 
@@ -145,6 +159,12 @@ range.flex
 # Interquartile Range: To calculate the IQR of a variable, we use the function IQR() .
 
 # Calculate the IQR for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
+IQR_Flex <- IQR(plush.dat$Flexion)
+IQR_Ext <- IQR(plush.dat$Extension)
+IQR_Add <- IQR(plush.dat$Adduction)
+IQR_Abd <- IQR(plush.dat$Abduction)
+IQR_PB <- IQR(plush.dat$PelvicBreadth)
+IQR_MTC <- IQR(plush.dat$MidthighCircumference)
 
 
 
@@ -167,10 +187,12 @@ range.flex
 # Variance: To calculate the variance of a variable, we use the function var() .
 
 # Calculate the variances for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
-
-
-
-
+var(plush.dat$Flexion)
+var(plush.dat$Extension)
+var(plush.dat$Adduction)
+var(plush.dat$Abduction)
+var(plush.dat$PelvicBreadth)
+var(plush.dat$MidthighCircumference)
 
 
 
@@ -188,6 +210,14 @@ range.flex
 # Standard Deviation: To calculate the SD of a variable, we use the function sd() .
 
 # Calculate the SD for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
+SD_Flex <- sd(plush.dat$Flexion)
+SD_Ext <- sd(plush.dat$Extension)
+SD_Add <- sd(plush.dat$Adduction)
+SD_Abd <- sd(plush.dat$Abduction)
+SD_PB <- sd(plush.dat$PelvicBreadth)
+SD_MTC <- sd(plush.dat$MidthighCircumference)
+
+
 
 
 
@@ -209,18 +239,22 @@ range.flex
 
 # Bonus:
 # Can you compile all the means for each variable into vectors?
-
-
-
-
-
-
+Avg_Ext <- mean(plush.dat$Extension)
+Avg_Add <- mean(plush.dat$Adduction)
+Avg_Abd <- mean(plush.dat$Abduction)
+Avg_PB <- mean(plush.dat$PelvicBreadth)
+Avg_MTC <- mean(plush.dat$MidthighCircumference)
+Avg_Flex <- mean(plush.dat$Flexion)
 
 
 # Can you combine these mean vectors into a matrix? 
+means <- c(Avg_Ext, Avg_Add, Avg_Abd, Avg_PB, Avg_MTC, Avg_Flex)
 
 
 
 # Can you make vectors and matricies for the other statistics that we calculated above?
+Standard_Deviants <- c(SD_Flex, SD_Ext, SD_Add, SD_Abd, SD_PB, SD_MTC)
+Ranges <- c(range.extend, range.add, range.abd, range.Pelbread, range.flex)
+IQR <- c(IQR_Flex,IQR_Ext, IQR_Add, IQR_Abd, IQR_PB, IQR_MTC )
 
 

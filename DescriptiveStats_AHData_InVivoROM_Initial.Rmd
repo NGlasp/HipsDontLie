@@ -51,12 +51,26 @@ rom.dat <- read.csv(file.choose(), row.names = NULL)
 
 
 # Print rom.dat into the Console below. You should now see your data in the Console, and see rom.dat in the Environment tab to the right. How many variables do you see?
-
+rom.dat
 
 
 # In the last few classes before break, we learned about various descriptive statistics (like mean and standard deviation). Please review your notes and ask questions to remind yourself what these statistics are!
 
 # Mean: To calculate the mean (or average) of a variable, we use the funtion mean() . 
+ex_mean <- mean(rom.dat$Extension, na.rm = TRUE) # 136.875 degrees
+flex_mean <- mean(rom.dat$Flexion, na.rm = TRUE) # 38.625 degrees
+ab_mean <- mean(rom.dat$Abduction, na.rm = TRUE) # 113 degrees
+#ad_mean <- mean(rom.dat$Aduction, na.rm = TRUE) #113 degrees
+circ_mean <- mean(rom.dat$ThighCircumference, na.rm = TRUE) #33.25 cm
+length_mean <-  mean(rom.dat$ThighLength, na.rm = TRUE) #23.625 cm
+#billiac_mean <-  mean(rom.dat$BilliacBreadth, na.rm = TRUE) #21 cm
+bie_mean <-  mean(rom.dat$BiepicondylarBreadth, na.rm = TRUE) #5.5 cm
+int_mean <-  mean(rom.dat$InternalRotation, na.rm = TRUE)#47.35 degrees
+ext_mean <-  mean(rom.dat$ExternalRotation, na.rm = TRUE)#36.125 degrees
+
+
+
+
 # Remember: to select a single variable from a dataset, we use the $ symbol. For example, if I only want the data for Flexion, I write rom.dat$Flexion .
 
 # Calculate the means for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
@@ -70,6 +84,19 @@ mean(rom.dat$Flexion)
 # Median: To calculate the median of a variable, we use the function median() .
 
 # Calculate the medians for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+ex_range <- max(rom.dat$Extension) - min(rom.dat$Extension)#37 degrees
+flex_range <- max(rom.dat$Flexion) - min(rom.dat$Flexion)#20 degrees
+ab_range <- max(rom.dat$Abduction) - min(rom.dat$Abduction)#20 degrees
+circ_range <- max(rom.dat$ThighCircumference) - min(rom.dat$ThighCircumference)#12cm
+ad_range <- max(rom.dat$Adduction) - min(rom.dat$Adduction)#40 degrees
+length_range <- max(rom.dat$ThighLength) - min(rom.dat$ThighLength)#11 cm
+billiac_range <- max(rom.dat$BiiliacBreadth) - min(rom.dat$BiiliacBreadth)#5 cm
+bie_range <- max(rom.dat$BiepicondylarBreadth) - min(rom.dat$BiepicondylarBreadth)#2 cm
+int_range <- max(rom.dat$InternalRotation) - min(rom.dat$InternalRotation)#20 degrees
+ext_range <- max(rom.dat$ExternalRotation) - min(rom.dat$ExternalRotation)#25 degrees
+
+
+
 
 
 
@@ -79,6 +106,7 @@ mean(rom.dat$Flexion)
 # For example:
 range.flex <- max(rom.dat$Flexion) - min(rom.dat$Flexion)
 range.flex
+
 #Answer: _ degrees
 
 
@@ -97,6 +125,14 @@ range.flex
 
 
 # Standard Deviation: To calculate the SD of a variable, we use the function sd() .
+sdExt <- sd(rom.dat$Exstension)
+sdAdd <- sd(rom.dat$Adduction)
+sdAbd <- sd(rom.dat$Abduction)
+sdTL <- sd(rom.dat$ThighLength)
+sdC <- sd(rom.dat$ThighCircumference)
+sdFlex <- sd(rom.dat$Flexion)
+sdBB <- sd(rom.dat$BiiliacBreadth)
+
 
 # Calculate the SD for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
 
@@ -105,9 +141,9 @@ range.flex
 # Now, compare your answers with those of the other person using the same dataset as you!
 
 # Together, work to compile the statistics (mean, median, etc.) of each variable (Extension, Flexion, etc.) into vectors. Then compile these vectors into matrices/dataframes/lists with labels. Your end goal is to have one variable that, when printed, shows you every statistic for every variable.
-
-
-
+names(Mean) <- c(ab_mean, bie_mean, circ_mean, ext_mean, ex_mean, int_mean, flex_mean, length_mean)
+names(Range) <- c(ab_range, bie_range, circ_range, ext_range, ex_range, int_range, flex_range, length_range)
+names(SD) <- c(sdAbd, sdAdd, sdBB, sdC, sdExt, sdFlex, sdTL)
 
 # Bonus:
 
