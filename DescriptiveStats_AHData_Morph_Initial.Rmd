@@ -42,7 +42,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 # 1. What genus are you working with?
 ```{r}
-
+#Papio
 ```
 # ^What's that gray box thing? It's called an R Code Chunk. Code Chunks make it easy to write and run bits of code. The output of your Chunk code will also automatically appear in the Chunk.
 # To add an R Code Chunk into your R Markdown, click the green "+C Insert" button in the editor toolbar above, then choose "R".
@@ -57,6 +57,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 ```{r}
 # Import morphology data:
 morph.dat <- read.csv(file.choose(), row.names = NULL)
+
 ```
 
 # 3. Print morph.dat into the Console below. How many variables do you have?
