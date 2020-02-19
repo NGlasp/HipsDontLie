@@ -57,22 +57,17 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 ```{r}
 # Import morphology data:
 morph.dat <- read.csv(file.choose(), row.names = NULL)
-
-<<<<<<< HEAD
-
-`
+```
 
 # 3. Print morph.dat into the Console below. How many variables do you have?
 ```{r}
-morph.dat
-=======
+
 ```
 
 
 # 3. Print morph.dat into the Console below. How many variables do you have?
 ```{r}
 
->>>>>>> 387216fb6761b54170ceb0dd635d4845e400f597
 ```
 
 
@@ -90,7 +85,7 @@ flex.mean
 
 # 5. Calculate the medians for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
 ```{r}
-<<<<<<< HEAD
+
 FD.med <- median(morph.dat$FemurHead)
 NSA.med <- median(morph.dat$NSA)
 Neck.med <- median(morph.dat$NeckLength)
@@ -105,9 +100,7 @@ TA.med <- median(morph.dat$TotalArea)
 SUP.med <- median(morph.dat$SUP)
 ANT.med <- median(morph.dat$ANT)
 AD.med <- median(morph.dat$AcetabularDiameter)
-=======
 
->>>>>>> 387216fb6761b54170ceb0dd635d4845e400f597
 ```
 
 
@@ -119,7 +112,7 @@ AD.med <- median(morph.dat$AcetabularDiameter)
 
 # 7. Calculate the Interquartile Range (IQR) for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
 ```{r}
-<<<<<<< HEAD
+
 FD.IQR <- IQR(morph.dat$FemurHead)
 NSA.ran <- IQR(morph.dat$NSA)
 Neck.ran <- IQR(morph.dat$NeckLength)
@@ -134,9 +127,7 @@ TA.ran <- range(morph.dat$TotalArea)
 SUP.ran <- range(morph.dat$SUP)
 ANT.ran <- range(morph.dat$ANT)
 AD.ran <- range(morph.dat$AcetabularDiameter)
-=======
 
->>>>>>> 387216fb6761b54170ceb0dd635d4845e400f597
 ```
 
 
