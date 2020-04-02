@@ -19,5 +19,19 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 morph_dat <-  read.csv(file.choose(), row.names = NULL)
 
 
+# Plotting primate data
+> plot(Morph_Rom$total_area, Morph_Rom$abduction, pch=15, col="green")
+> plot(Morph_Rom$abduction, Morph_Rom$total_area, pvh=16, col="red")
+Morph_Rom <- read.csv(file.choose())
+> View(Morph_Rom)
+> Pelvic <- Morph_Rom$pelvic
+> Abduction <- Morph_Rom$abduction
+> hist(Abduction)
+> par(mfrow = c(3,3))
+> hist(Abduction)
+Error in plot.new() : figure margins too large
+> par(mfrow = c(2,2))
+> hist(Abduction)
+
 
 
