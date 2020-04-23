@@ -39,13 +39,52 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 # 1. Import the full primate dataset from GitHub (PrimateMorphROMData_Full.csv):
 ```{r}
-pri.dat <- 
+pri.dat <- read.csv(file.choose())
+            
 ```
 
 
 # 2. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable in your dataset. Assign each mean and SD to a new variable!
 # Tip: Use the na.rm=TRUE argument in your funtions if dealing with NAs. Ex: mean(x, na.rm=TRUE)
 ```{r}
+sd_FH()
+sd_NSA <- sd(pri.dat$NSA)
+sd_Neck <- sd(pri.dat$Neck)
+sd_L2 <- sd(pri.dat$L2)
+sd_L4<- sd(pri.dat$L4)
+sd_FTA<- sd(pri.dat$FTA)
+sd_PS<- sd(pri.dat$PS)
+sd_PI<- sd(pri.dat$PI)
+sd_AS<- sd(pri.dat$AS)
+sd_AI<- sd(pri.dat$AI)
+sd_TA<- sd(pri.dat$TotalArea)
+sd_SUP<- sd(pri.dat$SUP)
+sd_ANT<- sd(pri.dat$ANT)
+sd_AD<- sd(pri.dat$AcetabDiameter)
+sd_PB<- sd(pri.dat$PelvicBreadth)
+sd_ABD<- sd(pri.dat$Abduction)
+sd_AK<- sd(pri.dat$AbductedKnee)
+FH_mean <- mean(pri.dat$)
+NSA_mean <- mean(pri.dat$NSA)
+NL_mean <- mean(pri.dat$NL)
+L2_mean <- mean(pri.dat$L2)
+L4_mean <- mean(pri.dat$L4)
+FTA_mean <- mean(pri.dat$FTA)
+PS_mean <- mean(pri.dat$PS)
+PI_mean<- mean(pri.dat$PI)
+AS_mean<- mean(pri.dat$AS)
+AI_mean<- mean(pri.dat$AI)
+TA_mean<- mean(pri.dat$TA)
+SUP_mean<- mean(pri.dat$SUP)
+ANT_mean<- mean(pri.dat$ANT)
+AceD_mean<- mean(pri.dat$AceD)
+PB_mean<- mean(pri.dat$PB)
+Abd_mean<- mean(pri.dat$Abd)
+AK_mean<- mean(pri.dat$AK)      
+
+
+
+
 
 ```
 
@@ -53,7 +92,15 @@ pri.dat <-
 # 3. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable by GENUS. For example, what is the mean Femur Head size for primates in the Alouatta genus?
 # Tip: Remember the square brackets? []
 ```{r}
-
+#standard deviations
+#FemurHead
+FH_alou <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Alouatta")])
+FH_ate <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Ateles")])
+FH_Ceb <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Cebus")])
+FH_Mac <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Macaca")])
+FH_Trac <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Trachypithecus")])
+FH_ <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Cercopithecus")])
+FH_ <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "")])
 ```
 
 
